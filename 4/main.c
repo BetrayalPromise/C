@@ -5,31 +5,35 @@
 // #define DEFER_0(x)    DEFER_2(x, __COUNTER__)
 // #define defer __attribute__((cleanup(handler))) void (^ DEFER_0(option))(void) =
 
- #define DEFER_MAX    10
- #define defer_start\
-    void * _defer_stack[DEFER_MAX];\
-    void * _defer_run;\
-    int  _defer_stack_index = 0;
+#include <assert.h>
+#include <stdbool.h>
 
- #define ___defer_label(x)   _defer_label_ ## x
- #define __defer_label(x)    ___defer_label(x)
- #define _defer_label        __defer_label(__LINE__)
+ #define ___LABEL___(x)   ___LABEL___ ## x
+ #define __LABEL__(x)    ___LABEL___(x)
+ #define _LABEL_        __LABEL__(__LINE__)
+
+ #define defer_start(number)\
+    void * _defers_[number];\
+    void * _run_;\
+    int  _index_ = 0;\
+    int _number_ = number;
 
  #define defer(code) \
-    if(_defer_stack_index > DEFER_MAX - 1) { printf("DEFER_MAX too smaller"); };\
-    _defer_stack[_defer_stack_index ++] = && _defer_label;\
+    if (_index_ > _number_ - 1) {\
+        printf("number too smaller!");\
+        assert(false);\
+    };\
+    _defers_[_index_ ++] = && _LABEL_;\
     if (0) {\
-        _defer_label:code;\
-        if (_defer_stack_index --) goto *_defer_stack[_defer_stack_index];\
-        else goto *_defer_run;\
+        _LABEL_:code;\
+        if (_index_ --) goto *_defers_[_index_];\
+        else goto *_run_;\
     }
-#define defer_stop\
-    _defer_run = && _defer_label;\
-    if (_defer_stack_index--)\
-        goto *_defer_stack[_defer_stack_index];\
-    _defer_label:
-
-
+#define defer_stop()\
+    _run_ = && _LABEL_;\
+    if (_index_--)\
+        goto *_defers_[_index_];\
+    _LABEL_:
 
 #include <stdio.h>
 #include <stdlib.h>
@@ -41,17 +45,19 @@ struct A {
 };
 
 int main(int argc, char ** argv) {
-    defer_start;
+    defer_start(10);
     int * p = malloc(sizeof(struct A));
-    if (!p) 
-        return 1;
+    if (!p) return 1;
 
     defer({
-        printf("defer \n");
-        free(p);
+        printf("defer A\n");
+    });
+
+    defer({
+        printf("defer B\n");
     });
     printf("malloc memory\n");
-    defer_stop;
+    defer_stop();
     return EXIT_SUCCESS;
 }
 

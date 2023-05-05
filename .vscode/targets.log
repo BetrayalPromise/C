@@ -6,11 +6,8 @@ make all --print-data-base --no-builtin-variables --no-builtin-rules --question
 # PARTICULAR PURPOSE.
 
 # This program built for i386-apple-darwin11.3.0
- 
-make: *** No rule to make target `all'.  Stop.
 
-
-# Make data base, printed on Thu May  4 13:22:19 2023
+# Make data base, printed on Fri May  5 13:19:02 2023
 
 # Variables
 
@@ -45,7 +42,7 @@ __CFBundleIdentifier = com.microsoft.VSCode
 # environment
 VSCODE_CWD = /
 # environment
-PATH = /opt/local/bin:/opt/local/sbin:/Library/Frameworks/Python.framework/Versions/3.5/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/go/bin:/usr/local/share/dotnet:~/.dotnet/tools:/Library/Apple/usr/bin:/Users/user0/.cargo/bin::/Users/user0/.bin/:/usr/local/Cellar/maven/3.5.0:/Users/user0/.rvm/bin:/Users/user0/.rvm/bin:/usr/local/opt/go/libexec/bin:/Users/user0/.bin
+PATH = /opt/local/bin:/opt/local/sbin:/Library/Frameworks/Python.framework/Versions/3.5/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/go/bin:/usr/local/share/dotnet:~/.dotnet/tools:/Library/Apple/usr/bin::/Users/user0/.bin/:/usr/local/Cellar/maven/3.5.0:/Users/user0/.rvm/bin:/Users/user0/.rvm/bin:/usr/local/opt/go/libexec/bin:/Users/user0/.bin
 # environment
 LSCOLORS = Gxfxcxdxbxegedabagacad
 # environment
@@ -75,7 +72,7 @@ HOME = /Users/user0
 # default
 MAKEFILEPATH := /Applications/Xcode.app/Contents/Developer/Makefiles
 # environment
-VSCODE_CODE_CACHE_PATH = /Users/user0/Library/Application Support/Code/CachedData/704ed70d4fd1c6bd6342c436f1ede30d1cff4710
+VSCODE_CODE_CACHE_PATH = /Users/user0/Library/Application Support/Code/CachedData/252e5463d60e63238250799aef7375787f68b4ee
 # environment
 LOGNAME = user0
 # environment
@@ -119,7 +116,7 @@ TMPDIR = /var/folders/s2/bsx3cpmn235cq34mrbkqw5c00000gn/T/
 # automatic
 *F = $(notdir $*)
 # environment
-VSCODE_IPC_HOOK = /Users/user0/Library/Application Support/Code/1.77-main.sock
+VSCODE_IPC_HOOK = /Users/user0/Library/Application Support/Code/1.78-main.sock
 # environment
 MallocNanoZone = 0
 # makefile
@@ -129,7 +126,7 @@ MFLAGS = -Rrqp
 # automatic
 *D = $(patsubst %/,%,$(dir $*))
 # environment
-XPC_SERVICE_NAME = application.com.microsoft.VSCode.8645466438.8645466444
+XPC_SERVICE_NAME = application.com.microsoft.VSCode.8645854235.8645854241
 # automatic
 +D = $(patsubst %/,%,$(dir $+))
 # environment
@@ -167,7 +164,7 @@ MAKELEVEL := 0
 # environment
 LANG = C
 # environment
-VSCODE_PID = 25639
+VSCODE_PID = 62114
 # variable set hash-table stats:
 # Load=77/1024=8%, Rehash=0, Collisions=1/98=1%
 
@@ -177,9 +174,9 @@ VSCODE_PID = 25639
 
 # Directories
 
-# . (device 16777220, inode 8645166163): 9 files, no impossibilities.
+# . (device 16777220, inode 8645166163): 12 files, no impossibilities.
 
-# 9 files, no impossibilities in 1 directories.
+# 12 files, no impossibilities in 1 directories.
 
 # Implicit Rules
 
@@ -219,7 +216,6 @@ makefile:
 #  File does not exist.
 #  File has been updated.
 #  Failed to be updated.
- 
 # variable set hash-table stats:
 # Load=0/32=0%, Rehash=0, Collisions=0/0=0%
 
@@ -252,6 +248,8 @@ GNUmakefile:
 # strcache size: total = 0 / max = 0 / min = 4096 / avg = 0
 # strcache free: total = 0 / max = 0 / min = 4096 / avg = 0
 
-# Finished Make data base on Thu May  4 13:22:19 2023
+# Finished Make data base on Fri May  5 13:19:02 2023
 
  
+make: *** No rule to make target `all'.  Stop.
+

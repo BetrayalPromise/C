@@ -5,7 +5,7 @@
     #define __$NAMESPACE$__(s, Module, File, Name) Module##s##File##s##Name
     #define __NAMESPACE__(s, Module, File, Name) __$NAMESPACE$__(s, Module, File, Name)
 #else
-    #warning "information: other module define macro '__$NAMESPACE$__' or '__NAMESPACE__'!"
+    #warning "information: other module define macro '__$NAMESPACE$__', '__NAMESPACE__'!"
 #endif
     
 #if !defined(func)
@@ -22,7 +22,7 @@
     #define $$(Module, File, Name) func($, Module, File, Name)
     #define __(Module, File, Name) func(_, Module, File, Name)
 #else
-    #warning "information: other module also define macro '$$' or '__'!"
+    #warning "information: other module also define macro '$$', '__'!"
 #endif
 
 
@@ -30,14 +30,14 @@
     #define init(type, n) ((type *)malloc((n) * sizeof(type)))
     #define deinit(var) (free(var); var = NULL);
 #else
-    #warning "information: other module also define macro 'init' or 'deinit'!"
+    #warning "information: other module also define macro 'init', 'deinit'!"
 #endif
 
 #if !defined (Stringfy) && !defined (Println)
     #define Stringfy(x) #x
     #define Println putchar('\n')
 #else
-    #warning "information: other module also define macro 'Stringfy' or 'ln'!"
+    #warning "information: other module also define macro 'Stringfy', 'ln'!"
 #endif
 
 #if !defined(weak) && !defined (strong)
@@ -57,7 +57,7 @@
     #define Minimum(type, x, y) ({ type __min1 = (x); type __min2 = (y); __min1 < __min2 ? __min1 : __min2; })
     #define Maximum(type, x, y) ({ type __max1 = (x); type __max2 = (y); __max1 > __max2 ? __max1 : __max2; })
 #else
-    #warning "information: other module also define macro 'Minimum' or 'Maximum'!"
+    #warning "information: other module also define macro 'Minimum', 'Maximum'!"
 #endif
 
 #if !defined(GenericType)

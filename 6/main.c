@@ -3,12 +3,13 @@
 #include <string.h>
 #include "defer.h"
 
-void test1(void) {Deferral
+void test1(void) {
+	Deferral();
 	char *x = malloc(0x100);
-	Defer(free(x));
+	defer(free(x));
 
 	/* legal because deconstruction happens in reverse order */
-	Defer({
+	defer({
 		printf("x is %s\n", x);
 		x[1]++;
 		printf("now %s\n", x);
@@ -19,14 +20,15 @@ void test1(void) {Deferral
 	Return;
 }
 
-int test2(void) {Deferral
+int test2(void) {
+	Deferral();
 	puts("1");
 
 	/* caveat: unlike in other programming languages, the return expression
 	 * is evaluated after deferred statements.  Unfortunately, there is no
 	 * good way around this.
 	 */
-	Defer(puts("2"));
+	defer(puts("2"));
 	Return puts("3");
 }
 
